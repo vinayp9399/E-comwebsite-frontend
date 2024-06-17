@@ -1,0 +1,31 @@
+* {
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+#header{
+  height: 126px;
+  width: auto;
+  text-align: center;
+}
+
+.login1{
+  width:350px;
+  height:auto;
+  border: 5px solid rgb(14, 37, 86);
+  border-radius: 10px;
+  box-shadow: 10px 10px 24px;
+  margin:auto;
+  padding:20px;
+}
+
+.submit_button{
+  border-radius: 10px;
+  box-shadow: 10px 10px 24px;
+  background-color: rgb(14, 37, 86);
+  color:white;
+  height: 36px;
+  width: 344px;
+  font-size: 18px;
+  margin:auto;
+}

@@ -1,0 +1,13 @@
+.a2{
+    text-decoration: none !important;
+    color:rgb(247, 247, 249);
+    font-weight:bolder;
+    font-size: 138%;
+  }
+
+#footer{
+    height: 368px;
+    width: auto;
+    color:white;
+    background-color: rgb(10, 25, 58);
+}

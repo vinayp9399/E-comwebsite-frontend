@@ -1,0 +1,125 @@
+* {
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card2{
+    height:auto;
+    width:261px;
+    border:3px solid rgb(14, 37, 86);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 10px 10px 24px;
+    box-sizing: border-box;
+    float: left;
+    margin: 29px;
+    padding: 10px;
+}
+h4{
+    padding-bottom:8px;
+}
+h3{
+    padding-bottom:8px;
+}
+
+.card13{
+    height: 396px;
+    width: 387px;
+    border:3px solid rgb(14, 37, 86);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 1px 5px 14px;
+    box-sizing: border-box;
+    float: left;
+    margin: 17px;
+    padding: 10px;
+}
+.card_child{
+    height: 181px;
+    width: 198px;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    margin: -9px;
+    padding: 1px;
+}
+
+.img1{
+    height: 240px;
+    border-radius: 10px;
+    width:100%;
+    padding-bottom :24px;
+}
+
+.img1_1{
+    border-radius: 10px;
+    width: 160px;
+    float: left;
+    margin: 17px;
+}
+
+.img1:hover {
+    transition: .5s ease;
+    opacity: 0.6;
+}
+
+.star_img{
+    position:relative;
+    bottom:-4px;
+    height:20px;
+    width:20px;
+}
+
+.wishimage{
+    position: relative;
+    bottom: -4px;
+    height: 38px;
+    width: 33px;
+}
+
+.button1{
+    background-color: rgb(14, 37, 86);
+    color: white;
+    font-size: 17px;
+    border-radius: 10px;
+    height: 43px;
+    width: 191px;
+}
+
+.green{
+    color:green;
+}
+
+#menu{
+    height:1555px;
+    width:300px;
+    top:88px;
+    background-color: rgb(24 53 115);
+    border-right: 2px solid gray;
+    float: left;
+}
+
+.list1{
+    list-style-type: none;
+}
+
+.options{
+    text-decoration: none !important;
+    color:rgb(251, 251, 253);
+    font-size: 122%;
+}
+
+#contentarea{
+    height: auto;
+    width:959px;
+    background-color: white;
+    border-right: 2px solid gray;
+    float: left;
+}
+
+#content{
+    height:1555px;
+    width: auto;
+    background-color: rgb(254, 253, 253);
+}
