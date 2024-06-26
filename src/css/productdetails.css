@@ -180,6 +180,23 @@
     color: #fff;
 }
 
+.button12{
+    background-color: rgb(14, 37, 86);
+    color: white;
+    font-size: 17px;
+    border-radius: 10px;
+    height: 43px;
+    width: 191px;
+}
+
+.wishimage1{
+    position: relative;
+    bottom: -12px;
+    left:6px;
+    height: 38px;
+    width: 33px;
+}
+
 @media screen and (min-width: 992px){
     .card12{
         margin-top:50px;

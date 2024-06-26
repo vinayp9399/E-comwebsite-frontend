@@ -40,7 +40,8 @@ const Wishlist =()=>{
 
     return(
         <>
-    { wishdata=="" && <><div style={{height:"440px", width:"690px",textAlign:"center", border:"3px solid rgb(14, 37, 86)", borderRadius:"10px", margin: "20px auto" }}><h2>Your wishlist is Empty</h2></div></>}
+        <div style={{height:"900px", width:"850px", borderRadius:"10px", margin: "20px auto" }}>
+    { wishdata=="" && <><h2 style={{textAlign:"center"}}>Your wishlist is Empty</h2></>}
     { wishdata && wishdata.map((data)=>(
         <div class="box1">
 					<img src={data.imageurl}/>
@@ -52,8 +53,9 @@ const Wishlist =()=>{
 						<p onClick={()=>wishDelete(data._id)} class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
 					</div>
                     </div>
+                    
 
-        ))}
+        ))}</div>
         </>
     )
 }

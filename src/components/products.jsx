@@ -15,9 +15,8 @@ const Products = ()=>{
         })
     }
 
-    const productDetails =(a,b)=>{
-        localStorage.setItem('productname', a);
-        localStorage.setItem('productimage', b);
+    const productDetails =(a)=>{
+        localStorage.setItem('productid', a);
         navigate('/productdetails');
     }
     // if(location.pathname===`/products/${params.category}`){
@@ -96,7 +95,7 @@ const Products = ()=>{
                 { productdata && productdata.map((product)=>(
                     <>
                     <div class="card2">
-                    <img onClick={()=>{productDetails(product.productname,product.imageurl)}} class="img1" src={product.imageurl} alt=""/>
+                    <img onClick={()=>{productDetails(product._id)}} class="img1" src={product.imageurl} alt=""/>
                     <h3>{product.productname}</h3>
                     <h4 class="green">Rs {product.price}</h4>
                     <h4>{product.rating} <img class="star_img" src="https://pngimg.com/uploads/star/star_PNG41474.png" alt=""/></h4>

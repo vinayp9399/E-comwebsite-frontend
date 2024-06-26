@@ -1,8 +1,52 @@
+import { useState, useEffect } from 'react';
 import '../css/productdetails.css'
+import axios from 'axios'
 
 const Productdetails =()=>{
-  const productname = localStorage.getItem('productname');
-  const productimage = localStorage.getItem('productimage');
+  const productid = localStorage.getItem('productid');
+  const userid = localStorage.getItem('id');
+  const [productdata, setproductdata] = useState('');
+
+  const getproductData = ()=>{
+    axios.get(`http://localhost:8080/products/singleproductlist/${productid}`).then((response)=>{
+        setproductdata(response.data.message);
+    })
+}
+
+const cartAdd=()=>{
+
+  let cartitem={userid:userid,
+      productname:productdata.productname,
+      description:productdata.description,
+      price:productdata.price,
+      quantity:productdata.quantity,
+      rating:productdata.rating,
+      imageurl:productdata.imageurl,
+      category:productdata.category}
+      alert("item added to cart");
+  axios.post('http://localhost:8080/cart/addcart',cartitem).then((response)=>{
+  })
+}
+
+const wishAdd=()=>{
+
+  let wishitem={userid:userid,
+    productname:productdata.productname,
+    description:productdata.description,
+    price:productdata.price,
+    quantity:productdata.quantity,
+    rating:productdata.rating,
+    imageurl:productdata.imageurl,
+    category:productdata.category}
+      alert("item added to wishlist");
+  axios.post('http://localhost:8080/wishlist/addwish',wishitem).then((response)=>{
+  })
+}
+
+useEffect(()=>{
+  getproductData();
+})
+
     return(
     <>
     
@@ -11,7 +55,7 @@ const Productdetails =()=>{
         <div class = "product-imgs">
           <div class = "img-display">
             <div class = "img-showcase">
-              <img class="imgs" src={productimage} alt = "shoe image"/>
+              <img class="imgs" src={productdata.imageurl} alt = "product image"/>
             </div>
           </div>
           <div class = "img-select">
@@ -39,7 +83,7 @@ const Productdetails =()=>{
         </div>
         {/* <!-- card right --> */}
         <div class = "product-content">
-          <h1 class = "product-title">{productname}</h1>
+          <h1 class = "product-title">{productdata.productname}</h1>
           <a href = "#" class = "product-link">visit nike store</a>
           <div class = "product-rating">
             <i class = "fas fa-star"></i>
@@ -70,10 +114,10 @@ const Productdetails =()=>{
 
           <div class = "purchase-info">
             <input type = "number" min = "0" value = "1"/>
-            <button type = "button" class = "btn">
+            <button onClick={()=>{cartAdd()}} type = "button" class = "button12">
               Add to Cart <i class = "fas fa-shopping-cart"></i>
             </button>
-            <button type = "button" class = "btn">Compare</button>
+            <a onClick={()=>{wishAdd()}}><img class='wishimage1' src="https://clipart-library.com/images_k/heart-symbol-transparent/heart-symbol-transparent-21.png" alt="" /></a>
           </div>
 
           <div class = "social-links">

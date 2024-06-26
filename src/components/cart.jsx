@@ -4,18 +4,28 @@ import { useEffect, useState } from 'react'
 
 const Cart = ()=>{
     const [cartdata, setcartdata]= useState('');
+	const [total, settotal]= useState(0);
 	const userid = localStorage.getItem("id")
 
+	
 	const getallcartData = ()=>{
         axios.get(`http://localhost:8080/cart/cartlist/${userid}`).then((response)=>{
             setcartdata(response.data.message)
         })
     }
 
+	const priceTotal=()=>{
+		getallcartData();
+		for(let i of cartdata){
+		settotal(total + Number(i.price));
+		}
+	}
+
 	const cartDelete = (data)=>{
 		axios.delete(`http://localhost:8080/cart/deletecart/${data}`).then((response)=>{
 			getallcartData();
         })
+		priceTotal()
 	}
 
 	useEffect(()=>{
@@ -42,7 +52,7 @@ const Cart = ()=>{
 				))}
 			</div>
 			<div class="right-bar">
-				<p><span>Subtotal</span> <span>$120</span></p>
+				<p><span>Subtotal</span> <span>{total}</span></p>
 				<hr/>
 				<p><span>Tax (5%)</span> <span>$6</span></p>
 				<hr/>
