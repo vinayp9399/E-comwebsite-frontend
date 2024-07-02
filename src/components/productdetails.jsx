@@ -8,7 +8,7 @@ const Productdetails =()=>{
   const [productdata, setproductdata] = useState('');
 
   const getproductData = ()=>{
-    axios.get(`http://localhost:8080/products/singleproductlist/${productid}`).then((response)=>{
+    axios.get(`https://e-comwebsite-backend.vercel.app/products/singleproductlist/${productid}`).then((response)=>{
         setproductdata(response.data.message);
     })
 }
@@ -24,7 +24,7 @@ const cartAdd=()=>{
       imageurl:productdata.imageurl,
       category:productdata.category}
       alert("item added to cart");
-  axios.post('http://localhost:8080/cart/addcart',cartitem).then((response)=>{
+  axios.post('https://e-comwebsite-backend.vercel.app/cart/addcart',cartitem).then((response)=>{
   })
 }
 
@@ -39,7 +39,7 @@ const wishAdd=()=>{
     imageurl:productdata.imageurl,
     category:productdata.category}
       alert("item added to wishlist");
-  axios.post('http://localhost:8080/wishlist/addwish',wishitem).then((response)=>{
+  axios.post('https://e-comwebsite-backend.vercel.app/wishlist/addwish',wishitem).then((response)=>{
   })
 }
 

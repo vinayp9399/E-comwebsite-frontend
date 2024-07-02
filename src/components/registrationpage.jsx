@@ -47,7 +47,7 @@ const Registration = ()=>{
 
         if(location.pathname === '/login'){
             let registrationData ={email:email,password:password}
-            axios.post('http://localhost:8080/users/login',registrationData).then((response)=>{
+            axios.post('https://e-comwebsite-backend.vercel.app/users/login',registrationData).then((response)=>{
                 if(response.data.message == 'email or password does not match'){
                     //getformerror('Email or password is wrong');
                     console.log('Email or password is wrong');
@@ -108,7 +108,7 @@ const Registration = ()=>{
         
 
             if(count==0){let registrationData ={firstname:firstname,lastname:lastname,phoneno:phoneno,email:email,password:password}
-        axios.post('http://localhost:8080/users/registration',registrationData).then((response)=>{
+        axios.post('https://e-comwebsite-backend.vercel.app/users/registration',registrationData).then((response)=>{
                 console.log(response);
                 navigate('/login');
 

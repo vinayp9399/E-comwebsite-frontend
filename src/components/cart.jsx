@@ -9,7 +9,7 @@ const Cart = ()=>{
 
 	
 	const getallcartData = ()=>{
-        axios.get(`http://localhost:8080/cart/cartlist/${userid}`).then((response)=>{
+        axios.get(`https://e-comwebsite-backend.vercel.app/cart/cartlist/${userid}`).then((response)=>{
             setcartdata(response.data.message)
         })
     }
@@ -22,7 +22,7 @@ const Cart = ()=>{
 	}
 
 	const cartDelete = (data)=>{
-		axios.delete(`http://localhost:8080/cart/deletecart/${data}`).then((response)=>{
+		axios.delete(`https://e-comwebsite-backend.vercel.app/cart/deletecart/${data}`).then((response)=>{
 			getallcartData();
         })
 		priceTotal()

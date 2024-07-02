@@ -8,13 +8,13 @@ const Wishlist =()=>{
 	const userid = localStorage.getItem("id")
 
 	const getallwishData = ()=>{
-        axios.get(`http://localhost:8080/wishlist/wishlist/${userid}`).then((response)=>{
+        axios.get(`https://e-comwebsite-backend.vercel.app/wishlist/wishlist/${userid}`).then((response)=>{
             setwishdata(response.data.message)
         })
     }
 
 	const wishDelete = (data)=>{
-		axios.delete(`http://localhost:8080/wishlist/deletewish/${data}`).then((response)=>{
+		axios.delete(`https://e-comwebsite-backend.vercel.app/wishlist/deletewish/${data}`).then((response)=>{
 			getallwishData();
         })
 	}
@@ -30,7 +30,7 @@ const Wishlist =()=>{
             imageurl:product1.imageurl,
             category:product1.category}
             alert("item added to cart");
-        axios.post('http://localhost:8080/cart/addcart',cartitem).then((response)=>{
+        axios.post('https://e-comwebsite-backend.vercel.app/cart/addcart',cartitem).then((response)=>{
         })
     }
 

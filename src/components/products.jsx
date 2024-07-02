@@ -34,7 +34,7 @@ const Products = ()=>{
             imageurl:product1.imageurl,
             category:product1.category}
             alert("item added to cart");
-        axios.post('http://localhost:8080/cart/addcart',cartitem).then((response)=>{
+        axios.post('https://e-comwebsite-backend.vercel.app/cart/addcart',cartitem).then((response)=>{
         })
     }
 
@@ -49,7 +49,7 @@ const Products = ()=>{
             imageurl:product1.imageurl,
             category:product1.category}
             alert("item added to wishlist");
-        axios.post('http://localhost:8080/wishlist/addwish',wishitem).then((response)=>{
+        axios.post('https://e-comwebsite-backend.vercel.app/wishlist/addwish',wishitem).then((response)=>{
         })
     }
 
@@ -58,7 +58,7 @@ const Products = ()=>{
         getallproductData();
     })
     // const handleDelete = (userId)=>{
-    //     axios.delete(`http://localhost:8080/users/deleteuser/${userId})`).then((response)=>{
+    //     axios.delete(`https://e-comwebsite-backend.vercel.app/users/deleteuser/${userId})`).then((response)=>{
     //         console.log(response)
     //         getalluserData();
     //     })
