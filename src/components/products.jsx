@@ -10,7 +10,7 @@ const Products = ()=>{
 
     const userid = localStorage.getItem('id');
     const getallproductData = ()=>{
-        axios.get(`http://localhost:8080/products/findproducts/${params.category}`).then((response)=>{
+        axios.get(`https://e-comwebsite-backend.vercel.app/products/findproducts/${params.category}`).then((response)=>{
             setproductdata(response.data.message)
         })
     }
