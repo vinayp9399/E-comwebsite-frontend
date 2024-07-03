@@ -1,16 +1,20 @@
 import '../css/products.css';
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const Products = ()=>{
     const params = useParams();
     const navigate = useNavigate();
     const [productdata, setproductdata] = useState('');
+    const [IsLoading, setIsLoading] = useState(true);
+    const [category, setcategory] = useState('');
 
     const userid = localStorage.getItem('id');
     const getallproductData = ()=>{
         axios.get(`https://e-comwebsite-backend.vercel.app/products/findproducts/${params.category}`).then((response)=>{
+            setIsLoading(false);
+            setcategory(params.category);
             setproductdata(response.data.message)
         })
     }
@@ -33,7 +37,8 @@ const Products = ()=>{
             rating:product1.rating,
             imageurl:product1.imageurl,
             category:product1.category}
-            alert("item added to cart");
+            if(userid){alert("item added to cart");}
+            else{alert("Please login first")}
         axios.post('https://e-comwebsite-backend.vercel.app/cart/addcart',cartitem).then((response)=>{
         })
     }
@@ -48,14 +53,21 @@ const Products = ()=>{
             rating:product1.rating,
             imageurl:product1.imageurl,
             category:product1.category}
-            alert("item added to wishlist");
+            if(userid){alert("item added to wishlist");}
+            else{alert("Please login first")}
         axios.post('https://e-comwebsite-backend.vercel.app/wishlist/addwish',wishitem).then((response)=>{
         })
     }
 
 
     useEffect(()=>{
-        getallproductData();
+        if(category != params.category){
+            setIsLoading(true);
+            getallproductData();
+        }
+        else{
+            setIsLoading(false);
+        }  
     })
     // const handleDelete = (userId)=>{
     //     axios.delete(`https://e-comwebsite-backend.vercel.app/users/deleteuser/${userId})`).then((response)=>{
@@ -92,7 +104,12 @@ const Products = ()=>{
              </nav>
         </div>
         <div id="contentarea">
-                { productdata && productdata.map((product)=>(
+        {
+                    IsLoading===true ?
+                    <div className="loader">
+                    </div>
+                    : 
+                <>{ productdata && productdata.map((product)=>(
                     <>
                     <div class="card2">
                     <img onClick={()=>{productDetails(product._id)}} class="img1" src={product.imageurl} alt=""/>
@@ -102,7 +119,8 @@ const Products = ()=>{
                     <div style={{display:"flex", justifyContent:"space-between"}}><button class="button1" onClick={()=>{cartAdd(product)}}>Add to cart</button>
                     <a onClick={()=>{wishAdd(product)}}><img class='wishimage' src="https://clipart-library.com/images_k/heart-symbol-transparent/heart-symbol-transparent-21.png" alt="" /></a></div>
                     </div></>
-                ))}
+                ))}</>
+            }
         </div>       
                 </div>
             

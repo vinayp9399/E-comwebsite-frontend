@@ -6,11 +6,13 @@ const Cart = ()=>{
     const [cartdata, setcartdata]= useState('');
 	const [total, settotal]= useState(0);
 	const userid = localStorage.getItem("id")
+	const [IsLoading, setIsLoading] = useState(true);
 
 	
 	const getallcartData = ()=>{
         axios.get(`https://e-comwebsite-backend.vercel.app/cart/cartlist/${userid}`).then((response)=>{
             setcartdata(response.data.message)
+			setIsLoading(false);
         })
     }
 
@@ -34,6 +36,12 @@ const Cart = ()=>{
 
     return(
         <>  
+		{
+                    IsLoading===true ?
+                    <div style={{height:"800px"}}>
+                    <div className="loader">
+                    </div></div>
+                    : 
   <div class="wrapper">
 		<h2>Cart</h2>
 		<div class="project">
@@ -61,7 +69,7 @@ const Cart = ()=>{
 				<p><span>Total</span> <span>$141</span></p><a href="#"><i class="fa fa-shopping-cart"></i>Checkout</a>
 			</div>
 		</div>
-	</div>
+	</div>}
         </>
     )
 }

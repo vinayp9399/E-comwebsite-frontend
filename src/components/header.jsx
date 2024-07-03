@@ -3,6 +3,7 @@ import '../css/header.css'
 const Header = ()=>{
     const navigate = useNavigate();
     const email = localStorage.getItem('email');
+    const userid = localStorage.getItem("id");
     const firstname = localStorage.getItem('firstname');
     const handleLogout = ()=>{
         localStorage.clear();
@@ -19,8 +20,12 @@ const Header = ()=>{
            <div id="header">
         <div id="nav1"><a onClick={()=>{navigate('/')}}><img style={{height:"77px", width:"290px", padding:"5px"}} src="https://logos-download.com/wp-content/uploads/2018/09/BigCommerce_Logo.png" alt=""/></a>
         <div id="search" style={{width:"686px"}}><input class="search_box" type="text" placeholder="Search..." name="search"/><i style={{position:"relative", bottom:"32px", left:"312px", color:"rgb(13, 17, 94)"}} class="fa fa-search fa-lg" aria-hidden="true"></i></div>
-        <div id="nav1_1"><a onClick={()=>{navigate('/wishlist')}} class="a1"><i class="fa fa-heart fa-lg" aria-hidden="true"></i></a>
-        <a onClick={()=>{navigate('/cart')}} class="a1"><i style={{color:"rgb(13, 17, 94)"}} class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a>
+        <div id="nav1_1"><a onClick={()=>{if(!userid){
+                alert("Please login first!")
+            } navigate('/wishlist')}} class="a1"><i class="fa fa-heart fa-lg" aria-hidden="true"></i></a>
+        <a onClick={()=>{if(!userid){
+                alert("Please login first!")
+            } navigate('/cart')}} class="a1"><i style={{color:"rgb(13, 17, 94)"}} class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a>
         {!email &&<a onClick={()=>{navigate('/login')}} class="a1"><i style={{color:"rgb(13, 17, 94)"}} class="fa fa-user fa-lg" aria-hidden="true"></i></a>}
         {email &&
         <><a onClick={()=>{logoutInfo()}} class="a1"><i style={{color:"rgb(13, 17, 94)"}} class="fa fa-user fa-lg" aria-hidden="true"></i></a>
@@ -34,9 +39,9 @@ const Header = ()=>{
             <li><a class="a2" onClick={()=>{navigate('/products/men')}}>Men</a></li>
             <li><a class="a2" onClick={()=>{navigate('/products/women')}}>Women</a></li>
             <li><a class="a2" onClick={()=>{navigate('/products/electronics')}}>Electronics</a></li>
-            <li><a class="a2" onClick={()=>{navigate('/products/men')}}>Accessories</a></li>
-            <li><a class="a2" onClick={()=>{navigate('/products/men')}}>Lifestyle</a></li>
-            <li><a class="a2" onClick={()=>{navigate('/products/men')}}>Jewellery</a></li></ul></div>
+            <li><a class="a2" onClick={()=>{navigate('/products/accessories')}}>Accessories</a></li>
+            <li><a class="a2" onClick={()=>{navigate('/products/lifestyle')}}>Lifestyle</a></li>
+            <li><a class="a2" onClick={()=>{navigate('/products/jewellery')}}>Jewellery</a></li></ul></div>
     </div>
 
         </>

@@ -6,10 +6,12 @@ const Productdetails =()=>{
   const productid = localStorage.getItem('productid');
   const userid = localStorage.getItem('id');
   const [productdata, setproductdata] = useState('');
+  const [IsLoading, setIsLoading] = useState(true);
 
   const getproductData = ()=>{
     axios.get(`https://e-comwebsite-backend.vercel.app/products/singleproductlist/${productid}`).then((response)=>{
         setproductdata(response.data.message);
+        setIsLoading(false);
     })
 }
 
@@ -49,16 +51,20 @@ useEffect(()=>{
 
     return(
     <>
-    
-      <div class = "card12">
-        {/* <!-- card left --> */}
+    {
+                    IsLoading===true ?
+                    <div style={{height:"800px"}}>
+                    <div className="loader">
+                    </div></div>
+                    : 
+      <><div class = "card12">
         <div class = "product-imgs">
           <div class = "img-display">
             <div class = "img-showcase">
               <img class="imgs" src={productdata.imageurl} alt = "product image"/>
             </div>
           </div>
-          <div class = "img-select">
+          {/* <div class = "img-select">
             <div class = "img-item">
               <a href = "#" data-id = "1">
                 <img class="imgs" src = "https://media.extra.com/s/aurora/100322230_800/Apple-iPhone-14-Pro-Max%2C-5G%2C-128GB%2C-Space-Black?locale=en-GB,en-*,*" alt = "shoe image"/>
@@ -79,9 +85,8 @@ useEffect(()=>{
                 <img class="imgs" src = "https://media.extra.com/s/aurora/100322230_800/Apple-iPhone-14-Pro-Max%2C-5G%2C-128GB%2C-Space-Black?locale=en-GB,en-*,*" alt = "shoe image"/>
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
-        {/* <!-- card right --> */}
         <div class = "product-content">
           <h1 class = "product-title">{productdata.productname}</h1>
           <a href = "#" class = "product-link">visit nike store</a>
@@ -139,7 +144,7 @@ useEffect(()=>{
             </a>
           </div>
         </div>
-      </div>
+      </div></>}
    
     </>
     )
