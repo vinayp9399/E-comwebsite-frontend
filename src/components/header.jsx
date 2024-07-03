@@ -18,7 +18,7 @@ const Header = ()=>{
     return(
         <>
            <div id="header">
-        <div id="nav1"><a onClick={()=>{navigate('/')}}><img style={{height:"77px", width:"290px", padding:"5px"}} src="https://logos-download.com/wp-content/uploads/2018/09/BigCommerce_Logo.png" alt=""/></a>
+        <div id="nav1"><a onClick={()=>{navigate('/')}}><img style={{height:"77px", width:"290px", padding:"5px"}} src="/images/BigCommerce_Logo.png" alt=""/></a>
         <div id="search" style={{width:"686px"}}><input class="search_box" type="text" placeholder="Search..." name="search"/><i style={{position:"relative", bottom:"32px", left:"312px", color:"rgb(13, 17, 94)"}} class="fa fa-search fa-lg" aria-hidden="true"></i></div>
         <div id="nav1_1"><a onClick={()=>{if(!userid){
                 alert("Please login first!")

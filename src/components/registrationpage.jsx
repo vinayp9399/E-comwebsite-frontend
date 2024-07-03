@@ -55,7 +55,7 @@ const Registration = ()=>{
                 countl = countl + 1 ;
             }
             if(countl==0){let registrationData ={email:email,password:password}
-            axios.post('http://localhost:8080/users/login',registrationData).then((response)=>{
+            axios.post('https://e-comwebsite-backend.vercel.app/users/login',registrationData).then((response)=>{
                 if(response.data.message === 'email or password does not match'){
                     //getformerror('Email or password is wrong');
                     console.log('Email or password is wrong');
