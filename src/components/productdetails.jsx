@@ -25,7 +25,8 @@ const cartAdd=()=>{
       rating:productdata.rating,
       imageurl:productdata.imageurl,
       category:productdata.category}
-      alert("item added to cart");
+      if(userid){alert("item added to wishlist");}
+      else{alert("Please login first")}
   axios.post('https://e-comwebsite-backend.vercel.app/cart/addcart',cartitem).then((response)=>{
   })
 }
@@ -40,7 +41,8 @@ const wishAdd=()=>{
     rating:productdata.rating,
     imageurl:productdata.imageurl,
     category:productdata.category}
-      alert("item added to wishlist");
+    if(userid){alert("item added to wishlist");}
+    else{alert("Please login first")}
   axios.post('https://e-comwebsite-backend.vercel.app/wishlist/addwish',wishitem).then((response)=>{
   })
 }
