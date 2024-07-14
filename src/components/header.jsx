@@ -1,10 +1,23 @@
 import { useNavigate } from 'react-router-dom'
 import '../css/header.css'
+import axios from 'axios'
+import { useState,useEffect } from 'react';
+import {useSelector} from "react-redux";
+
 const Header = ()=>{
     const navigate = useNavigate();
+    const count = useSelector(state=>state);
+    const[cartcount, setcartcount] = useState(0)
     const email = localStorage.getItem('email');
     const userid = localStorage.getItem("id");
     const firstname = localStorage.getItem('firstname');
+
+    const getallcartData = ()=>{
+        axios.get(`https://e-comwebsite-backend.vercel.app/cart/cartlist/${userid}`).then((response)=>{
+            setcartcount(response.data.message.length);
+        })
+    }
+
     const handleLogout = ()=>{
         localStorage.clear();
         navigate('/login')
@@ -15,6 +28,11 @@ const Header = ()=>{
     const logoutInfo1 = ()=>{
         document.getElementById("prof").style.display="none";
     }
+
+    useEffect(()=>{
+        getallcartData();
+    },[])
+
     return(
         <>
            <div id="header">
@@ -25,7 +43,12 @@ const Header = ()=>{
             } navigate('/wishlist')}} class="a1"><i class="fa fa-heart fa-lg" aria-hidden="true"></i></a>
         <a onClick={()=>{if(!userid){
                 alert("Please login first!")
-            } navigate('/cart')}} class="a1"><i style={{color:"rgb(13, 17, 94)"}} class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a>
+            } navigate('/cart')}} class="a1"><i style={{color:"rgb(13, 17, 94)"}} class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+
+            {cartcount !=0 &&
+            <span class='badge badge-warning' id='lblCartCount'>{cartcount}</span>}
+            
+            </a>
         {!email &&<a onClick={()=>{navigate('/login')}} class="a1"><i style={{color:"rgb(13, 17, 94)"}} class="fa fa-user fa-lg" aria-hidden="true"></i></a>}
         {email &&
         <><a onClick={()=>{logoutInfo()}} class="a1"><i style={{color:"rgb(13, 17, 94)"}} class="fa fa-user fa-lg" aria-hidden="true"></i></a>

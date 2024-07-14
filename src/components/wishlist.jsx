@@ -43,13 +43,15 @@ const Wishlist =()=>{
 
     return(
         <>
+        <div style={{height:"900px", width:"850px", borderRadius:"10px", margin: "30px auto" }}>
+        <h2>Wishlist</h2>
         {
                     IsLoading===true ?
                     <div style={{height:"800px"}}>
                     <div className="loader">
                     </div></div>
                     : 
-        <div style={{height:"900px", width:"850px", borderRadius:"10px", margin: "20px auto" }}>
+        <>
     { wishdata=="" && <><h2 style={{textAlign:"center"}}>Your wishlist is Empty</h2></>}
     { wishdata && wishdata.map((data)=>(
         <div class="box1">
@@ -64,7 +66,7 @@ const Wishlist =()=>{
                     </div>
                     
 
-        ))}</div>}
+        ))}</>}</div>
         </>
     )
 }

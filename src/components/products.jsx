@@ -40,6 +40,7 @@ const Products = ()=>{
             if(userid){alert("item added to cart");}
             else{alert("Please login first")}
         axios.post('https://e-comwebsite-backend.vercel.app/cart/addcart',cartitem).then((response)=>{
+            
         })
     }
 
@@ -56,6 +57,7 @@ const Products = ()=>{
             if(userid){alert("item added to wishlist");}
             else{alert("Please login first")}
         axios.post('https://e-comwebsite-backend.vercel.app/wishlist/addwish',wishitem).then((response)=>{
+           
         })
     }
 
