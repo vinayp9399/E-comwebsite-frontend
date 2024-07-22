@@ -1,5 +1,4 @@
 •	BIG COMMERCE is a user-friendly E-Commerce website which helps in online product sale.
-<img width="960" alt="Screenshot (331)" src="https://github.com/user-attachments/assets/57c1b58c-73c1-4ba8-825b-539bfae98b10">
 <img width="960" alt="Screenshot (323)" src="https://github.com/user-attachments/assets/e3863492-de2d-4ad7-b5d7-df466c9880d3">
 
 •	It provides the user with a catalog of different products available for purchase in the store. In order to facilitate online purchase a Shopping Cart and Wishlist are provided to the user.
