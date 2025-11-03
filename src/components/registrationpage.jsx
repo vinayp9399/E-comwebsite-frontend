@@ -132,30 +132,30 @@ const Registration = ()=>{
     
     return(
         <>
-  <div id="header">
+  <div style={{backgroundColor: 'rgb(232 230 230)'}} id="header">
         <a onClick={()=>{navigate('/')}}><img style={{height:"77px", width:"290px", padding:"5px"}} src="https://logos-download.com/wp-content/uploads/2018/09/BigCommerce_Logo.png" alt=""/></a>
     </div>
     <div id="content">
             <form class="login1">
-            <h1 style={{color:"rgb(14, 37, 86)"}}>{formname}</h1><br/>
+            <h2 style={{color:"rgb(14, 37, 86)"}}>{formname}</h2><br/>
             { buttonname === 'Sign In' &&
             <>
-                <label><strong>First Name:</strong></label><br/> 
-                <input id="fname" style={{height:"24px", width:"339px"}} type="text" name="firstname" value={firstname} onChange={firstnameHanadler} required/><br/>
+                <div style={{display:'flex', flexDirection:'column'}}><label><strong>First Name:</strong></label><br/> 
+                <input id="fname" style={{height:"24px", width:"339px"}} type="text" name="firstname" value={firstname} onChange={firstnameHanadler} required/></div>
                 <h4 style={{color:"red"}} id="fname_error"></h4><br/>
-                <label><strong>Last Name:</strong></label><br/> 
-                <input id="lname" style={{height:"24px", width:"339px"}} type="text" name="lastname" value={lastname} onChange={lastnameHanadler} required/><br/>
+                <div style={{display:'flex', flexDirection:'column'}}><label><strong>Last Name:</strong></label><br/> 
+                <input id="lname" style={{height:"24px", width:"339px"}} type="text" name="lastname" value={lastname} onChange={lastnameHanadler} required/></div>
                 <h4 style={{color:"red"}} id="lname_error"></h4> <br/> 
-                <label><strong>Mobile No.:</strong></label><br/>
-                <input id="mob_no" style={{height:"24px", width:"339px"}} type="tel" name="Phone_No." value={phoneno} onChange={phonenoHanadler} required/><br/>
+                <div style={{display:'flex', flexDirection:'column'}}><label><strong>Mobile No.:</strong></label><br/>
+                <input id="mob_no" style={{height:"24px", width:"339px"}} type="tel" name="Phone_No." value={phoneno} onChange={phonenoHanadler} required/></div>
                 <h4 style={{color:"red"}} id="mob_no_error"></h4><br/>
                 </>
             }
-                <label><strong>Email Id:</strong></label><br/> 
-                <input id="email" style={{height:"24px", width:"339px"}} type="email" name="email" value={email} onChange={emailHanadler} required/> <br/>
+                <div style={{display:'flex', flexDirection:'column'}}><label><strong>Email Id:</strong></label><br/>
+                <input id="email" style={{height:"24px", width:"339px"}} type="email" name="email" value={email} onChange={emailHanadler} required/></div>
                 <h4 style={{color:"red"}} id="email_error"></h4><br/>
-                <label><strong>Password:</strong></label><br/> 
-                <input id="password" style={{height:"24px", width:"339px"}} type="Password" name="password" value={password} onChange={passwordHanadler} required/><br/>
+                <div style={{display:'flex', flexDirection:'column'}}><label><strong>Password:</strong></label><br/>
+                <input id="password" style={{height:"24px", width:"339px"}} type="Password" name="password" value={password} onChange={passwordHanadler} required/></div>
                 <h4 style={{color:"red"}} id="password_error"></h4><br/>
                 <input class="submit_button" type="submit" value={buttonname} onClick={submitHandler} name="submit"/>
                 { buttonname === 'Sign In' &&<p style={{marginTop:"10px", textAlign:"center"}}>Already have an account? <a style={{color:"blue"}} onClick={()=>{navigate('/login')}}>Log In</a></p>}
