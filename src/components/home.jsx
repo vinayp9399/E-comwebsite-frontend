@@ -8,6 +8,7 @@ const Home=()=>{
     <>
     <div class="content">
         {<Slider/>}
+        <div className='grid1'>
         <div class="card1">
             <h3 class="heading">Revamp your home in style</h3>
             <div class="card_child">
@@ -67,7 +68,7 @@ const Home=()=>{
             <img class="img1_1" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08CPQVLZT._SY232_CB667322346_.jpg" alt=""/>
             <br/><h5 style={{padding:"3px"}}>Washing machines</h5>
             </div>
-        </div><br/>
+        </div>
         <div class="card1">
             <h3 class="heading">Starting ₹99 | All your home improvement</h3>
             <div class="card_child">
@@ -127,6 +128,7 @@ const Home=()=>{
             <img class="img1_1" src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Vaccum2x._SY232_CB410830555_.jpg" alt=""/>
             <br/><h5 style={{padding:"3px"}}>Vaccum cleaners</h5>
             </div>
+        </div>
         </div>
         </div>
     </>)

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import '../css/home.css';
 const Slider = ()=>{
-    let images =['https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/home-landing-web/Homepage_Banners_1920x655_38aEuqC.jpg?format=webp&w=1300&dpr=1.5',
-    'https://blog.elverys.ie/app/uploads/2018/06/NIKE-BANNERS-1920X696-2-1.jpg',
-    'https://storage.sg.content-cdn.io/in-resources/7f703506-689d-4b4e-b482-c32d60769d33/Images/ProductImages/Source/Home%20Page%20Banner%20images/Home%20Banner%203-Earpods.jpeg']
+    let images =['https://images-eu.ssl-images-amazon.com/images/G/31/sudipta/BAU/GW/PC/High1_Budget_store_Unrec._CB779539446_.jpg',
+    'https://images-eu.ssl-images-amazon.com/images/G/31/img23/Beauty/GW/yesbank/makeup_PC._CB796616147_.png',
+    'https://images-eu.ssl-images-amazon.com/images/G/31/Img25/Consumables/Grocery/SVD/Nov/SVD_PC_Hero_01_3000x1200._CB779402117_.jpg']
     let [imageno, setimageno] = useState(0);
-    const [image, setimage]=useState('https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/home-landing-web/Homepage_Banners_1920x655_38aEuqC.jpg?format=webp&w=1300&dpr=1.5');
+    const [image, setimage]=useState('https://images-eu.ssl-images-amazon.com/images/G/31/sudipta/BAU/GW/PC/High1_Budget_store_Unrec._CB779539446_.jpg');
 
     function changeSlide(){
         setimage(images[imageno]);

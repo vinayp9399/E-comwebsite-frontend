@@ -82,8 +82,8 @@ const Products = ()=>{
         <>
         <div id="content">
         <div id="menu">
-            <nav style={{lineHeight:"52px", paddingTop:"42px"}}>
-                <ul class="list1"><li class="a2">Category</li>
+            <nav style={{lineHeight:"52px", paddingTop:"10px", fontSize:'15px'}}>
+                <ul style={{lineHeight:"46px"}} class="list1"><li class="a2">Category</li>
                 <ul class="list1"><li class="options"><input type="radio" name="category"/> <span>Clothing</span></li>
                                   <li class="options"><input type="radio" name="category"/> <span>Watches</span></li>
                                   <li class="options"><input type="radio" name="category"/> <span>Shoes</span></li>
@@ -111,17 +111,17 @@ const Products = ()=>{
                     <div className="loader">
                     </div>
                     : 
-                <>{ productdata && productdata.map((product)=>(
+                <><div className="grid2">{ productdata && productdata.map((product)=>(
                     <>
                     <div class="card2">
                     <img onClick={()=>{productDetails(product._id)}} class="img1" src={product.imageurl} alt=""/>
                     <h3>{product.productname}</h3>
                     <h4 class="green">Rs {product.price}</h4>
-                    <h4>{product.rating} <img class="star_img" src="https://pngimg.com/uploads/star/star_PNG41474.png" alt=""/></h4>
-                    <div style={{display:"flex", justifyContent:"space-between"}}><button class="button1" onClick={()=>{cartAdd(product)}}>Add to cart</button>
-                    <a onClick={()=>{wishAdd(product)}}><img class='wishimage' src="https://clipart-library.com/images_k/heart-symbol-transparent/heart-symbol-transparent-21.png" alt="" /></a></div>
+                    <div style={{display:"flex",justifyContent:'space-between',alignItems:'center'}}><h4>{product.rating} <img class="star_img" src="https://pngimg.com/uploads/star/star_PNG41474.png" alt=""/></h4>
+                    <div style={{display:"flex", justifyContent:"space-between", gap:'10px'}}><i onClick={()=>{cartAdd(product)}} style={{color:"rgb(13, 17, 94)"}} class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <i onClick={()=>{wishAdd(product)}} style={{color:"rgba(241, 22, 22, 1)"}} class="fa fa-heart" aria-hidden="true"></i></div></div>
                     </div></>
-                ))}</>
+                ))}</div></>
             }
         </div>       
                 </div>

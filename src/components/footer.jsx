@@ -4,10 +4,10 @@ const Footer=()=>{
     return(
         <>
         <div id="footer">
-        <div style={{height:"50px", backgroundColor:"rgb(5, 12, 28)", textAlign:"center", paddingTop:"20px"}}>
+        <div style={{height:"35px", backgroundColor:"rgb(5, 12, 28)", textAlign:"center", paddingTop:"20px"}}>
         <a class="a2" href="#header"><p>Back to top</p></a>
         </div>
-            <div style={{display:"flex", gap:"91px", marginTop:"15px", lineHeight:"29px"}}>
+            <div style={{display:"flex", marginTop:"15px", lineHeight:"29px", fontSize: '12px',justifyContent:"space-around"}}>
                 <div>
                     <ul><h3>Get to Know Us</h3>
                     <li>About Us</li>
