@@ -10,7 +10,7 @@ const Home=()=>{
         {<Slider/>}
         <div className='grid1'>
         <div class="card1">
-            <h3 class="heading">Revamp your home in style</h3>
+            <h3 style={{textAlign:'center'}} class="heading">Revamp your home in style</h3>
             <div class="card_child">
             <img class="img1_1" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/186x116_Home_furnishings_2._SY116_CB584596691_.jpg" alt=""/>
             <br/><h5 style={{padding:"3px"}}>Cushion covers</h5>
@@ -30,7 +30,7 @@ const Home=()=>{
             </div>
         </div>
         <div class="card1">
-            <h3 class="heading">Up to 60% off | Styles for men</h3>
+            <h3 style={{textAlign:'center'}} class="heading">Up to 60% off | Styles for men</h3>
             <div class="card_child">
             <img class="img1_1" src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-1-186-116._SY116_CB636110853_.jpg" alt=""/>
             <br/><h5 style={{padding:"3px"}}>Clothings</h5>
@@ -50,7 +50,7 @@ const Home=()=>{
             </div>
         </div>
         <div class="card1">
-            <h3 class="heading">Appliances for your home | Up to 55% off</h3>
+            <h3 style={{textAlign:'center'}} class="heading">Appliances for your home | Up to 55% off</h3>
             <div class="card_child">
             <img class="img1_1" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-372x232----B08RDL6H79._SY232_CB667322346_.jpg" alt=""/>
             <br/><h5 style={{padding:"3px"}}>Air conditioners</h5>
@@ -70,7 +70,7 @@ const Home=()=>{
             </div>
         </div>
         <div class="card1">
-            <h3 class="heading">Starting ₹99 | All your home improvement</h3>
+            <h3 style={{textAlign:'center'}} class="heading">Starting ₹99 | All your home improvement</h3>
             <div class="card_child">
             <img class="img1_1" src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/HI/SYED/ATF/QC-adapts_376x232_4._SY232_CB600489960_.jpg" alt=""/>
             <br/><h5 style={{padding:"3px"}}>Spin mops</h5>
@@ -90,7 +90,7 @@ const Home=()=>{
             </div>
         </div>
         <div class="card1">
-            <h3 class="heading">Up to 60% off | Styles for women</h3>
+            <h3 style={{textAlign:'center'}} class="heading">Up to 60% off | Styles for women</h3>
             <div class="card_child">
             <img class="img1_1" src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC_WF/WF1-372-232._SY232_CB636048992_.jpg" alt=""/>
             <br/><h5 style={{padding:"3px"}}>Women clothings</h5>
@@ -110,7 +110,7 @@ const Home=()=>{
             </div>
         </div>
         <div class="card1">
-            <h3 class="heading">Automotive essentials | Up to 60% off</h3>
+            <h3 style={{textAlign:'center'}} class="heading">Automotive essentials | Up to 60% off</h3>
             <div class="card_child">
             <img class="img1_1" src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Glasscare2x._SY232_CB410830552_.jpg" alt=""/>
             <br/><h5 style={{padding:"3px"}}>Cleaning accesories</h5>
