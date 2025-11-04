@@ -3,17 +3,23 @@ import '../css/header.css'
 import axios from 'axios'
 import { useState,useEffect } from 'react';
 import {useSelector} from "react-redux";
+import { useDispatch } from 'react-redux'
+import { addsearch } from '../redux/features/search/searchslice';
 
 const Header = ()=>{
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const count = useSelector(state=>state);
-    const[cartcount, setcartcount] = useState(0)
+    const[cartcount, setcartcount] = useState(0);
+    const[search, setsearch] = useState('');
+
     const email = localStorage.getItem('email');
     const userid = localStorage.getItem("id");
     const firstname = localStorage.getItem('firstname');
 
     const getallcartData = ()=>{
-        axios.get(`https://e-comwebsite-backend.vercel.app/cart/cartlist/${userid}`).then((response)=>{
+        axios.get(`https://e-comwebsite-backend.onrender.com/cart/cartlist/${userid}`).then((response)=>{
             setcartcount(response.data.message.length);
         })
     }
@@ -28,6 +34,11 @@ const Header = ()=>{
     const logoutInfo1 = ()=>{
         document.getElementById("prof").style.display="none";
     }
+    
+    const searchFunc=()=>{
+         dispatch(addsearch(search))
+         navigate('/products')
+    }
 
     useEffect(()=>{
         getallcartData();
@@ -36,8 +47,12 @@ const Header = ()=>{
     return(
         <>
            <div id="header">
-        <div id="nav1"><a onClick={()=>{navigate('/')}}><img style={{width:"200px", padding:"5px"}} src="/images/BigCommerce_Logo.png" alt=""/></a>
-        <div id="search" style={{width:"686px"}}><input class="search_box" type="text" placeholder="Search..." name="search"/><i style={{position:"relative", bottom:"32px", left:"312px", color:"rgb(13, 17, 94)"}} class="fa fa-search" aria-hidden="true"></i></div>
+        <div id="nav1"><a onClick={()=>{navigate('/')}}>
+           <img style={{width:"200px", padding:"5px"}} src="/images/BigCommerce_Logo.png" alt=""/></a>
+           <div id="search" style={{width:"686px"}}>
+            <input onChange={(e)=>setsearch(e.target.value)} class="search_box" type="text" placeholder="Search..." name="search"/>
+            <i onClick={()=>{searchFunc()}} style={{position:"relative", bottom:"32px", left:"312px", color:"rgb(13, 17, 94)"}} class="fa fa-search" aria-hidden="true"></i>
+           </div>
         <div id="nav1_1"><a onClick={()=>{if(!userid){
                 alert("Please login first!")
             } navigate('/wishlist')}} class="a1"><i class="fa fa-heart" aria-hidden="true"></i></a>

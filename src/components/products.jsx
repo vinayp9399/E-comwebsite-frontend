@@ -2,9 +2,12 @@ import '../css/products.css';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector} from 'react-redux'
 
 const Products = ()=>{
     const params = useParams();
+    const search = useSelector(state=>state.search)
+
     const navigate = useNavigate();
     const [productdata, setproductdata] = useState('');
     const [IsLoading, setIsLoading] = useState(true);
@@ -12,11 +15,21 @@ const Products = ()=>{
 
     const userid = localStorage.getItem('id');
     const getallproductData = ()=>{
-        axios.get(`https://e-comwebsite-backend.vercel.app/products/findproducts/${params.category}`).then((response)=>{
+        if(search!='' && !params.category){
+            console.log(search.search);
+            axios.get(`https://e-comwebsite-backend.onrender.com/products/searchproducts/${search.search}`).then((response)=>{
+            setIsLoading(false);
+            setcategory(params.category);
+            setproductdata(response.data.message)
+        }) 
+        }
+        else{
+        axios.get(`https://e-comwebsite-backend.onrender.com/products/findproducts/${params.category}`).then((response)=>{
             setIsLoading(false);
             setcategory(params.category);
             setproductdata(response.data.message)
         })
+    }
     }
 
     const productDetails =(a)=>{
@@ -39,7 +52,7 @@ const Products = ()=>{
             category:product1.category}
             if(userid){alert("item added to cart");}
             else{alert("Please login first")}
-        axios.post('https://e-comwebsite-backend.vercel.app/cart/addcart',cartitem).then((response)=>{
+        axios.post('https://e-comwebsite-backend.onrender.com/cart/addcart',cartitem).then((response)=>{
             
         })
     }
@@ -56,7 +69,7 @@ const Products = ()=>{
             category:product1.category}
             if(userid){alert("item added to wishlist");}
             else{alert("Please login first")}
-        axios.post('https://e-comwebsite-backend.vercel.app/wishlist/addwish',wishitem).then((response)=>{
+        axios.post('https://e-comwebsite-backend.onrender.com/wishlist/addwish',wishitem).then((response)=>{
            
         })
     }
@@ -72,7 +85,7 @@ const Products = ()=>{
         }  
     })
     // const handleDelete = (userId)=>{
-    //     axios.delete(`https://e-comwebsite-backend.vercel.app/users/deleteuser/${userId})`).then((response)=>{
+    //     axios.delete(`https://e-comwebsite-backend.onrender.com/users/deleteuser/${userId})`).then((response)=>{
     //         console.log(response)
     //         getalluserData();
     //     })

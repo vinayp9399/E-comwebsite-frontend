@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 const Userlist = ()=>{
     const [userdata, setuserdata] = useState('');
     const getalluserData = ()=>{
-        axios.get("https://e-comwebsite-backend.vercel.app/users/userlist").then((response)=>{
+        axios.get("https://e-comwebsite-backend.onrender.com/users/userlist").then((response)=>{
             setuserdata(response.data.message)
         })
     }
@@ -11,7 +11,7 @@ const Userlist = ()=>{
         getalluserData();
     },[])
     const handleDelete = (userId)=>{
-        axios.delete(`https://e-comwebsite-backend.vercel.app/users/deleteuser/${userId}`).then((response)=>{
+        axios.delete(`https://e-comwebsite-backend.onrender.com/users/deleteuser/${userId}`).then((response)=>{
             console.log(response);
             getalluserData();
         })
