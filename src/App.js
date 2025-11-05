@@ -8,6 +8,7 @@ import Userlistpage from './pages/userlistpage';
 import Cartpage from './pages/cartpage';
 import Productdetailspage from './pages/productdetailspage';
 import Wishlistpage from './pages/wishlistpage';
+import Addproduct from './pages/addproducts';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
     <BrowserRouter>
         <Routes>
             <Route path='/' element={<Homepage/>}/>
+            <Route path='/addproducts' element={<Addproduct/>}/>
             <Route path='/registration' element={<Registrationpage/>}/>
             <Route path='/login' element={<Loginpage/>}/>
             <Route path='/contact' element={<Contactpage/>}/>

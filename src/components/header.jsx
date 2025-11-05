@@ -5,10 +5,12 @@ import { useState,useEffect } from 'react';
 import {useSelector} from "react-redux";
 import { useDispatch } from 'react-redux'
 import { addsearch } from '../redux/features/search/searchslice';
+import { useParams } from 'react-router-dom';
 
 const Header = ()=>{
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const params = useParams();
 
     const count = useSelector(state=>state);
     const[cartcount, setcartcount] = useState(0);
@@ -19,7 +21,7 @@ const Header = ()=>{
     const firstname = localStorage.getItem('firstname');
 
     const getallcartData = ()=>{
-        axios.get(`https://e-comwebsite-backend.onrender.com/cart/cartlist/${userid}`).then((response)=>{
+        axios.get(`http://localhost:8080/cart/cartlist/${userid}`).then((response)=>{
             setcartcount(response.data.message.length);
         })
     }
@@ -74,12 +76,12 @@ const Header = ()=>{
         <div id="nav2"><input type="checkbox" id="checkbox-toggle"/>
             <label for="checkbox-toggle" class="hamburger2">&#9776;</label>        
             <ul id="menu1">
-            <li><a class="a2" onClick={()=>{navigate('/products/men')}}>Men</a></li>
-            <li><a class="a2" onClick={()=>{navigate('/products/women')}}>Women</a></li>
-            <li><a class="a2" onClick={()=>{navigate('/products/electronics')}}>Electronics</a></li>
-            <li><a class="a2" onClick={()=>{navigate('/products/accessories')}}>Accessories</a></li>
-            <li><a class="a2" onClick={()=>{navigate('/products/lifestyle')}}>Lifestyle</a></li>
-            <li><a class="a2" onClick={()=>{navigate('/products/jewellery')}}>Jewellery</a></li></ul></div>
+            <li><a class="a2" style={params.category=='men' ? {color:'red'}:{}} onClick={()=>{navigate('/products/men')}}>Men</a></li>
+            <li><a class="a2" style={params.category=='women' ? {color:'red'}:{}} onClick={()=>{navigate('/products/women'); window.location.reload()}}>Women</a></li>
+            <li><a class="a2" style={params.category=='electronics' ? {color:'red'}:{}} onClick={()=>{navigate('/products/electronics'); window.location.reload()}}>Electronics</a></li>
+            <li><a class="a2" style={params.category=='accessories' ? {color:'red'}:{}} onClick={()=>{navigate('/products/accessories'); window.location.reload()}}>Accessories</a></li>
+            <li><a class="a2" style={params.category=='lifestyle' ? {color:'red'}:{}} onClick={()=>{navigate('/products/lifestyle'); window.location.reload()}}>Lifestyle</a></li>
+            <li><a class="a2" style={params.category=='jewellery' ? {color:'red'}:{}} onClick={()=>{navigate('/products/jewellery'); window.location.reload()}}>Jewellery</a></li></ul></div>
     </div>
 
         </>

@@ -55,7 +55,7 @@ const Registration = ()=>{
                 countl = countl + 1 ;
             }
             if(countl==0){let registrationData ={email:email,password:password}
-            axios.post('https://e-comwebsite-backend.onrender.com/users/login',registrationData).then((response)=>{
+            axios.post('http://localhost:8080/users/login',registrationData).then((response)=>{
                 if(response.data.message === 'email or password does not match'){
                     //getformerror('Email or password is wrong');
                     console.log('Email or password is wrong');
@@ -116,7 +116,7 @@ const Registration = ()=>{
         
 
             if(countr==0){let registrationData ={firstname:firstname,lastname:lastname,phoneno:phoneno,email:email,password:password}
-        axios.post('https://e-comwebsite-backend.onrender.com/users/registration',registrationData).then((response)=>{
+        axios.post('http://localhost:8080/users/registration',registrationData).then((response)=>{
                 console.log(response);
                 navigate('/login');
 
