@@ -21,7 +21,7 @@ const Header = ()=>{
     const firstname = localStorage.getItem('firstname');
 
     const getallcartData = ()=>{
-        axios.get(`http://localhost:8080/cart/cartlist/${userid}`).then((response)=>{
+        axios.get(`https://e-comwebsite-backend.onrender.com/cart/cartlist/${userid}`).then((response)=>{
             setcartcount(response.data.message.length);
         })
     }

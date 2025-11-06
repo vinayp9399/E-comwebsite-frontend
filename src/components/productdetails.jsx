@@ -9,7 +9,7 @@ const Productdetails =()=>{
   const [IsLoading, setIsLoading] = useState(true);
 
   const getproductData = ()=>{
-    axios.get(`http://localhost:8080/products/singleproductlist/${productid}`).then((response)=>{
+    axios.get(`https://e-comwebsite-backend.onrender.com/products/singleproductlist/${productid}`).then((response)=>{
         setproductdata(response.data.message);
         setIsLoading(false);
     })
@@ -27,7 +27,7 @@ const cartAdd=()=>{
       category:productdata.category}
       if(userid){alert("item added to wishlist");}
       else{alert("Please login first")}
-  axios.post('http://localhost:8080/cart/addcart',cartitem).then((response)=>{
+  axios.post('https://e-comwebsite-backend.onrender.com/cart/addcart',cartitem).then((response)=>{
   })
 }
 
@@ -43,7 +43,7 @@ const wishAdd=()=>{
     category:productdata.category}
     if(userid){alert("item added to wishlist");}
     else{alert("Please login first")}
-  axios.post('http://localhost:8080/wishlist/addwish',wishitem).then((response)=>{
+  axios.post('https://e-comwebsite-backend.onrender.com/wishlist/addwish',wishitem).then((response)=>{
   })
 }
 
