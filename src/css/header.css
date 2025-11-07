@@ -258,12 +258,13 @@ border-radius: 9px;
   
   input[type="checkbox"]:checked~#menu1 {
         display: block;
-        height:auto;
-        width:100%;
-        position:absolute;
+        height: auto;
+        width: 88.9vw;
+        position: absolute;
         text-align: center;
+        z-index: 100;
         line-height: 43px;
-        top:125px;
+        top: 99px;
         background-color: rgb(21, 56, 131);
       }   
   

@@ -113,3 +113,12 @@
     background-color: rgba(0,0,0,0.8);
   }
   
+
+@media screen and (max-width:700px) {
+
+.grid1{
+    height: 2500px;
+    grid-template-columns: 0fr;
+}
+
+}

@@ -11,3 +11,19 @@
     color:white;
     background-color: rgb(10, 25, 58);
 }
+
+
+@media screen and (max-width:700px) {
+
+#footer h3{
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+#footer li{
+  font-size: 10px;
+  line-height: 15px;
+}
+
+}

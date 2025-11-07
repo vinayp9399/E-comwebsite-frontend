@@ -156,3 +156,30 @@ h3{
     padding-top:20px;
     row-gap:25px;
 }
+
+@media screen and (max-width:700px) {
+
+#menu{
+    /* height:1555px;
+    width:300px;
+    top:88px;
+    background-color: rgb(24 53 115);
+    border-right: 2px solid gray;
+    float: left; */
+    display: none;
+}
+
+.grid2 {
+    grid-template-columns: 0fr 0fr;
+    width: 96vw;
+}
+
+#contentarea {
+    width: 96vw;
+}
+
+#content {
+    height: 2000px;
+}
+
+}
