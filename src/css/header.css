@@ -279,8 +279,9 @@ border-radius: 9px;
   #header #nav1_1{
       gap:20px;
       position:relative;
-      bottom:-12px;
+      bottom:-4px;
   }   
+
   }
   
   @media screen and (max-width:1214px) {

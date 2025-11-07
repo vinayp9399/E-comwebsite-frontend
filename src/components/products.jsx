@@ -113,8 +113,11 @@ const Products = ()=>{
     return(
         <>
         <div id="content">
+        
         <div id="menu">
-            <nav style={{lineHeight:"52px", paddingTop:"10px", fontSize:'15px'}}>
+            <input type="checkbox" id="checkbox-toggle1"/>
+            <label for="checkbox-toggle1" class="sidebutton">&#10095;</label> 
+            <nav id='menu12' style={{lineHeight:"52px", paddingTop:"10px", fontSize:'15px'}}>
                 
                 <ul style={{lineHeight:"46px"}} class="list1"><li class="a2">Category</li>
                 <ul class="list1">
