@@ -25,7 +25,7 @@ const Addproduct = ()=>{
       secondarycategory:secondarycategory,
       brand:brand,}
 
-  axios.post('https://e-comwebsite-backend.onrender.com/products/addproduct',productitem).then((response)=>{
+  axios.post('https://e-commbackend-fast-api.vercel.app/products/addproduct',productitem).then((response)=>{
     alert('item added!')
   })
     }

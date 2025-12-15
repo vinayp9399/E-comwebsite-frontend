@@ -23,7 +23,7 @@ const Products = ()=>{
     const getallproductData = ()=>{
         if(search!='' && !params.category){
             console.log(search.search);
-            axios.get(`https://e-comwebsite-backend.onrender.com/products/searchproducts/${search.search}`).then((response)=>{
+            axios.get(`https://e-commbackend-fast-api.vercel.app/products/searchproducts/${search.search}`).then((response)=>{
             setIsLoading(false);
             setcategory(params.category);
             setproductdata(response.data.message)
@@ -32,14 +32,14 @@ const Products = ()=>{
         // else if(selectedcategory!='' || selectedbrand!='' || selectedprice!=''){
         //     const params1 = {category:params.category,secondarycategory:selectedcategory,brand:selectedbrand,price:selectedprice}
         //     console.log(params1);
-        //     axios.get(`https://e-comwebsite-backend.onrender.com/products/sidesearchproducts`,{params:params1}).then((response)=>{
+        //     axios.get(`https://e-commbackend-fast-api.vercel.app/products/sidesearchproducts`,{params:params1}).then((response)=>{
         //     setIsLoading(false);
         //     setcategory(params.category);
         //     setproductdata(response.data.message)
         // }) 
         // }
         else{
-        // axios.get(`https://e-comwebsite-backend.onrender.com/products/findproducts/${params.category}`).then((response)=>{
+        // axios.get(`https://e-commbackend-fast-api.vercel.app/products/findproducts/${params.category}`).then((response)=>{
         //     setIsLoading(false);
         //     setcategory(params.category);
         //     setproductdata(response.data.message)
@@ -47,7 +47,7 @@ const Products = ()=>{
 
         const params1 = {category:params.category,secondarycategory:selectedcategory,brand:selectedbrand,price:selectedprice}
             console.log(params1);
-            axios.get(`https://e-comwebsite-backend.onrender.com/products/sidesearchproducts`,{params:params1}).then((response)=>{
+            axios.get(`https://e-commbackend-fast-api.vercel.app/products/sidesearchproducts`,{params:params1}).then((response)=>{
             console.log(response)
             setIsLoading(false);
             setcategory(params.category);
@@ -76,7 +76,7 @@ const Products = ()=>{
             category:product1.category}
             if(userid){alert("item added to cart");}
             else{alert("Please login first")}
-        axios.post('https://e-comwebsite-backend.onrender.com/cart/addcart',cartitem).then((response)=>{
+        axios.post('https://e-commbackend-fast-api.vercel.app/cart/addcart',cartitem).then((response)=>{
             
         })
     }
@@ -93,7 +93,7 @@ const Products = ()=>{
             category:product1.category}
             if(userid){alert("item added to wishlist");}
             else{alert("Please login first")}
-        axios.post('https://e-comwebsite-backend.onrender.com/wishlist/addwish',wishitem).then((response)=>{
+        axios.post('https://e-commbackend-fast-api.vercel.app/wishlist/addwish',wishitem).then((response)=>{
            
         })
     }
@@ -104,7 +104,7 @@ const Products = ()=>{
     getallproductData();
 }, [params.category, selectedcategory, selectedbrand, selectedprice, search]);
     // const handleDelete = (userId)=>{
-    //     axios.delete(`https://e-comwebsite-backend.onrender.com/users/deleteuser/${userId})`).then((response)=>{
+    //     axios.delete(`https://e-commbackend-fast-api.vercel.app/users/deleteuser/${userId})`).then((response)=>{
     //         console.log(response)
     //         getalluserData();
     //     })

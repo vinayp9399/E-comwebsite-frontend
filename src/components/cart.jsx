@@ -10,7 +10,7 @@ const Cart = ()=>{
 
 	
 	const getallcartData = ()=>{
-        axios.get(`https://e-comwebsite-backend.onrender.com/cart/cartlist/${userid}`).then((response)=>{
+        axios.get(`https://e-commbackend-fast-api.vercel.app/cart/cartlist/${userid}`).then((response)=>{
             setcartdata(response.data.message)
 			setIsLoading(false);
         })
@@ -24,7 +24,7 @@ const Cart = ()=>{
 	}
 
 	const cartDelete = (data)=>{
-		axios.delete(`https://e-comwebsite-backend.onrender.com/cart/deletecart/${data}`).then((response)=>{
+		axios.delete(`https://e-commbackend-fast-api.vercel.app/cart/deletecart/${data}`).then((response)=>{
 			getallcartData();
         })
 		priceTotal()
