@@ -54,7 +54,7 @@ const Registration = ()=>{
                 document.getElementById("login_error").innerHTML= "Invalid email!";
                 countl = countl + 1 ;
             }
-            if(countl==0){let registrationData ={email:email,password:password}
+            if(countl===0){let registrationData ={email:email,password:password}
             axios.post('https://e-commbackend-fast-api.vercel.app/users/login',registrationData).then((response)=>{
                 if(response.data.message === 'email or password does not match'){
                     //getformerror('Email or password is wrong');
@@ -115,7 +115,7 @@ const Registration = ()=>{
             // String(mob_no).match(expression_mob_no)? document.getElementById("mob_no_error").innerHTML= "":document.getElementById("mob_no_error").innerHTML= "Invalid mobile number!",  count = count + 1 ;
         
 
-            if(countr==0){let registrationData ={firstname:firstname,lastname:lastname,phoneno:phoneno,email:email,password:password}
+            if(countr===0){let registrationData ={firstname:firstname,lastname:lastname,phoneno:phoneno,email:email,password:password}
         axios.post('https://e-commbackend-fast-api.vercel.app/users/registration',registrationData).then((response)=>{
                 console.log(response);
                 navigate('/login');

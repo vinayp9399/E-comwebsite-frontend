@@ -1,4 +1,4 @@
-import Header from "../components/header"
+// import Header from "../components/header"
 import Registration from "../components/registrationpage"
 
 const Loginpage = ()=>{
