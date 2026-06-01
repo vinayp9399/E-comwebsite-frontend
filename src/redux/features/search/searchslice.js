@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  search: ''
+  search: '',
+  aiMode: false,   // ← ADDED: tracks whether AI search is active
 };
 
 const searchSlice = createSlice({
@@ -9,7 +10,8 @@ const searchSlice = createSlice({
   initialState,
   reducers: {
     addsearch: (state, action) => {
-      state.search = action.payload;
+      state.search = action.payload.text;     // ← now receives { text, aiMode }
+      state.aiMode = action.payload.aiMode;
     },
   },
 });
