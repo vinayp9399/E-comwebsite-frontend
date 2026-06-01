@@ -55,7 +55,7 @@ const Wishlist =()=>{
     { wishdata=="" && <><h2 style={{textAlign:"center"}}>Your wishlist is Empty</h2></>}
     { wishdata && wishdata.map((data)=>(
         <div class="box1">
-					<img src={data.imageurl}/>
+					<img alt="" src={data.imageurl}/>
 					<div class="content1">
 						<h3>{data.productname}</h3>
 						<h4>Price: {data.price}</h4>
