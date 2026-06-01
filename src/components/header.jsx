@@ -151,12 +151,12 @@ const Header = () => {
                     <input type="checkbox" id="checkbox-toggle" />
                     <label htmlFor="checkbox-toggle" className="hamburger2">&#9776;</label>
                     <ul id="menu1">
-                        <li><a className="a2" style={params.category === 'men' ? { color: 'red' } : {}} onClick={() => { navigate('/products/men') }}>Men</a></li>
-                        <li><a className="a2" style={params.category === 'women' ? { color: 'red' } : {}} onClick={() => { navigate('/products/women'); window.location.reload() }}>Women</a></li>
-                        <li><a className="a2" style={params.category === 'electronics' ? { color: 'red' } : {}} onClick={() => { navigate('/products/electronics'); window.location.reload() }}>Electronics</a></li>
-                        <li><a className="a2" style={params.category === 'accessories' ? { color: 'red' } : {}} onClick={() => { navigate('/products/accessories'); window.location.reload() }}>Accessories</a></li>
-                        <li><a className="a2" style={params.category === 'lifestyle' ? { color: 'red' } : {}} onClick={() => { navigate('/products/lifestyle'); window.location.reload() }}>Lifestyle</a></li>
-                        <li><a className="a2" style={params.category === 'jewellery' ? { color: 'red' } : {}} onClick={() => { navigate('/products/jewellery'); window.location.reload() }}>Jewellery</a></li>
+                        <li><a className="a2" style={params.category == 'men' ? { color: 'red' } : {}} onClick={() => { navigate('/products/men') }}>Men</a></li>
+                        <li><a className="a2" style={params.category == 'women' ? { color: 'red' } : {}} onClick={() => { navigate('/products/women'); window.location.reload() }}>Women</a></li>
+                        <li><a className="a2" style={params.category == 'electronics' ? { color: 'red' } : {}} onClick={() => { navigate('/products/electronics'); window.location.reload() }}>Electronics</a></li>
+                        <li><a className="a2" style={params.category == 'accessories' ? { color: 'red' } : {}} onClick={() => { navigate('/products/accessories'); window.location.reload() }}>Accessories</a></li>
+                        <li><a className="a2" style={params.category == 'lifestyle' ? { color: 'red' } : {}} onClick={() => { navigate('/products/lifestyle'); window.location.reload() }}>Lifestyle</a></li>
+                        <li><a className="a2" style={params.category == 'jewellery' ? { color: 'red' } : {}} onClick={() => { navigate('/products/jewellery'); window.location.reload() }}>Jewellery</a></li>
                     </ul>
                 </div>
             </div>

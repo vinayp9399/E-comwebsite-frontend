@@ -28,7 +28,7 @@ const Products = () => {
     const userid = localStorage.getItem('id');
 
     const getallproductData = () => {
-        if (searchText != '' && !params.category) {
+        if (searchText !== '' && !params.category) {
 
             if (aiMode) {
                 // ── AI Smart Search (NEW) ─────────────────────────────────────
