@@ -46,7 +46,7 @@ const Cart = ()=>{
 		<h2>Cart</h2>
 		<div class="project">
 			<div class="shop">
-            { cartdata=="" && <><div style={{height:"440px", width:"690px",textAlign:"center", border:"3px solid rgb(14, 37, 86)", borderRadius:"10px", marginBottom:"20px"}}><h2>Your Cart is Empty</h2></div></>}
+            { cartdata==="" && <><div style={{height:"440px", width:"690px",textAlign:"center", border:"3px solid rgb(14, 37, 86)", borderRadius:"10px", marginBottom:"20px"}}><h2>Your Cart is Empty</h2></div></>}
 			{ cartdata && cartdata.map((data)=>(
 				<div class="box">
 					<img alt="" src={data.imageurl}/>

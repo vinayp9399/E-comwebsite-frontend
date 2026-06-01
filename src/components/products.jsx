@@ -133,12 +133,12 @@ const Products = () => {
                         <ul style={{ lineHeight: "46px" }} className="list1">
                             <li className="a2">Category</li>
                             <ul className="list1">
-                                {(params.category == 'men' || params.category == 'women') && <>
+                                {(params.category === 'men' || params.category === 'women') && <>
                                     <li className="options"><input value="clothing" checked={selectedcategory === "clothing"} onChange={(e) => { setSelectedcategory(e.target.value) }} type="radio" name="category" /> <span>Clothing</span></li>
                                     <li className="options"><input value="shoes" checked={selectedcategory === "shoes"} onChange={(e) => { setSelectedcategory(e.target.value) }} type="radio" name="category" /> <span>Shoes</span></li>
                                     <li className="options"><input value="sports" checked={selectedcategory === "sports"} onChange={(e) => { setSelectedcategory(e.target.value) }} type="radio" name="category" /> <span>Sports</span></li>
                                 </>}
-                                {params.category == 'electronics' && <>
+                                {params.category === 'electronics' && <>
                                     <li className="options"><input value="Watch" checked={selectedcategory === "Watch"} onChange={(e) => { setSelectedcategory(e.target.value) }} type="radio" name="category" /> <span>Watches</span></li>
                                     <li className="options"><input value="earphones" checked={selectedcategory === "earphones"} onChange={(e) => { setSelectedcategory(e.target.value) }} type="radio" name="category" /> <span>Earphones</span></li>
                                     <li className="options"><input value="headphones" checked={selectedcategory === "headphones"} onChange={(e) => { setSelectedcategory(e.target.value) }} type="radio" name="category" /> <span>Headphones</span></li>
@@ -149,13 +149,13 @@ const Products = () => {
 
                             <li className="a2">Brand</li>
                             <ul className="list1">
-                                {(params.category == 'men' || params.category == 'women') && <>
+                                {(params.category === 'men' || params.category === 'women') && <>
                                     <li className="options"><input value="Levi's" checked={selectedbrand === "Levi's"} onChange={(e) => { setSelectedbrand(e.target.value) }} type="radio" name="brand" /> <span>Levi's</span></li>
                                     <li className="options"><input value="XYXX" checked={selectedbrand === "XYXX"} onChange={(e) => { setSelectedbrand(e.target.value) }} type="radio" name="brand" /> <span>XYXX</span></li>
                                     <li className="options"><input value="Van Heusen" checked={selectedbrand === "Van Heusen"} onChange={(e) => { setSelectedbrand(e.target.value) }} type="radio" name="brand" /> <span>Van Heusen</span></li>
                                     <li className="options"><input value="U.S. POLO ASSN." checked={selectedbrand === "U.S. POLO ASSN."} onChange={(e) => { setSelectedbrand(e.target.value) }} type="radio" name="brand" /> <span>U.S. POLO ASSN.</span></li>
                                 </>}
-                                {params.category == 'electronics' && <>
+                                {params.category === 'electronics' && <>
                                     <li className="options"><input value="apple" checked={selectedbrand === "apple"} onChange={(e) => { setSelectedbrand(e.target.value) }} type="radio" name="brand" /> <span>Apple</span></li>
                                     <li className="options"><input value="samsung" checked={selectedbrand === "samsung"} onChange={(e) => { setSelectedbrand(e.target.value) }} type="radio" name="brand" /> <span>Samsung</span></li>
                                     <li className="options"><input value="boat" checked={selectedbrand === "boat"} onChange={(e) => { setSelectedbrand(e.target.value) }} type="radio" name="brand" /> <span>Boat</span></li>
