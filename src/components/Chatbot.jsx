@@ -63,7 +63,7 @@ const Chatbot = () => {
         } catch (err) {
             setMessages(prev => [
                 ...prev,
-                { role: 'assistant', content: "Sorry, I'm having trouble connecting. Please try again." }
+                { role: 'assistant', content: "Sorry, I'm having trouble connecting. Please try again. " + err }
             ]);
         } finally {
             setLoading(false);
