@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
-import './chatbot.css';
+import '../css/chatbot.css';
 
 const API_BASE = 'https://e-commbackend-fast-api.vercel.app';
 
