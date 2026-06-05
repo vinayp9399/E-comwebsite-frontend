@@ -10,6 +10,8 @@ import Productdetailspage from './pages/productdetailspage';
 import Wishlistpage from './pages/wishlistpage';
 import Addproduct from './pages/addproducts';
 
+import Chatbot from './components/Chatbot';   
+
 function App() {
   return (
     <>
@@ -28,6 +30,7 @@ function App() {
             <Route path='/productdetails' element={<Productdetailspage/>}/>
         </Routes>
      </BrowserRouter>
+     <Chatbot/>
     </>
   );
 }
