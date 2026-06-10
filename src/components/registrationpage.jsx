@@ -65,6 +65,8 @@ const Registration = ()=>{
                     localStorage.setItem('email',response.data.message.email)
                     localStorage.setItem('firstname',response.data.message.firstname)
                     localStorage.setItem('id',response.data.message._id)
+                   localStorage.setItem('token', response.data.token)
+                   localStorage.setItem('refreshToken', response.data.refreshToken)
                    navigate('/')
                 }
                 
